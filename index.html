@@ -7,70 +7,144 @@
   <title>Abdirahman Ali</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">AA</a>
+      <div class="nav-right">
+        <a href="#" class="nav-link nav-active">Home</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#writing" class="nav-link">Articles</a>
+      </div>
+    </div>
+  </nav>
+
   <main>
 
+    <!-- Hero -->
     <section class="hero">
-      <img src="assets/avatar.png" alt="Abdirahman Ali" class="avatar" width="80" height="80">
-      <div class="hero-text">
-        <h1>Abdirahman Ali</h1>
-        <p class="role">Senior Analytics Engineer</p>
-        <nav class="links">
-          <a href="https://github.com/abdirahman2ali" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://medium.com/@abdirahman2ali" target="_blank" rel="noopener">Medium</a>
-          <a href="https://www.linkedin.com/in/abdirahman-ali" target="_blank" rel="noopener">LinkedIn</a>
-        </nav>
+      <p class="hero-pre">👋 Hey there, I'm</p>
+      <h1 class="hero-name">Abdirahman Ali.</h1>
+      <p class="hero-role">Senior Analytics Engineer. I build the infrastructure that turns raw data into decisions.</p>
+      <ul class="hero-status">
+        <li>⚡ 5+ years across the full analytics stack</li>
+        <li>🔧 Specializing in dbt, Looker, and warehouse design</li>
+      </ul>
+      <div class="hero-links">
+        <a href="https://github.com/abdirahman2ali" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+        <a href="https://www.linkedin.com/in/abdirahman-ali/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+        <a href="mailto:abdirahman2ali@gmail.com" class="btn btn-outline">Email</a>
       </div>
     </section>
 
-    <section class="bio">
-      <p>Data professional with 5+ years building scalable analytics infrastructure. I specialize in dbt, Looker, and the full analytics stack from warehouse modeling to self-serve BI.</p>
+    <!-- About Me -->
+    <section class="section">
+      <p class="section-label">🧑‍💻 About Me</p>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I'm a data professional with <span class="hl">5+ years of experience</span> building analytics infrastructure at tech companies. My work spans the full stack: <span class="hl">data modeling in dbt</span>, warehouse design, and the pipelines connecting all of it.</p>
+          <p>Most of what I build ends up in the hands of <span class="hl">non-technical teams</span>. The goal is always the same: make it easy for people to answer their own questions, without filing a ticket and waiting a week.</p>
+          <p>Away from work, I'm deep in <span class="hl">NBA statistics</span>. Deep enough that I built a full data pipeline to analyze 70 years of player data. You can explore it below.</p>
+          <p>I'm also getting deeper into <span class="hl">AI tooling</span>. Looking to take on more projects with Claude Code and explore how it can be used to solve harder, more interesting problems.</p>
+        </div>
+        <div class="about-photo-wrapper">
+          <img src="assets/photo.png" alt="Abdirahman Ali" class="about-photo">
+        </div>
+      </div>
     </section>
 
-    <section class="projects">
-      <h2>Projects</h2>
-      <div class="project-grid">
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <p class="section-label">🛠️ Projects</p>
 
-        <article class="project-card">
-          <div class="project-header">
-            <h3>NBA Analytics Pipeline</h3>
-            <a href="https://abdirahman2ali.github.io/nba-dashboard" target="_blank" rel="noopener" class="project-link">View project &rarr;</a>
+      <div class="project-feature">
+        <div class="project-feature-header">
+          <div>
+            <h2 class="project-title">NBA Analytics Pipeline</h2>
+            <p class="project-subtitle">End-to-end data pipeline covering 70+ years of NBA history</p>
           </div>
-          <p>Built a data transformation pipeline processing NBA player statistics through a medallion architecture (staging, intermediate, marts), calculating 15+ advanced basketball metrics including True Shooting %, PER-36, and usage rates.</p>
-          <div class="project-tags">
-            <span>dbt</span>
-            <span>PostgreSQL</span>
-            <span>Python</span>
-          </div>
-        </article>
+          <a href="https://abdirahman2ali.github.io/nba-dashboard" target="_blank" rel="noopener" class="btn btn-outline">View live &rarr;</a>
+        </div>
 
-        <article class="project-card">
-          <div class="project-header">
-            <h3>Writing</h3>
-            <a href="https://medium.com/@abdirahman2ali" target="_blank" rel="noopener" class="project-link">Read on Medium &rarr;</a>
+        <a href="https://abdirahman2ali.github.io/nba-dashboard" target="_blank" rel="noopener" class="dashboard-preview-link">
+          <div class="browser-mockup">
+            <div class="browser-bar">
+              <span class="browser-dot d-red"></span>
+              <span class="browser-dot d-yellow"></span>
+              <span class="browser-dot d-green"></span>
+              <span class="browser-url">abdirahman2ali.github.io/nba-dashboard</span>
+            </div>
+            <img src="assets/dashboard-preview.png" alt="NBA Analytics Dashboard preview" class="dashboard-preview">
           </div>
-          <p>Articles on analytics engineering, dbt, and data tooling. Practical guides for data professionals who want to build things that actually work.</p>
-          <div class="project-tags">
-            <span>Analytics Engineering</span>
-            <span>dbt</span>
-          </div>
-        </article>
+        </a>
+
+        <p class="project-description">Built a transformation pipeline processing NBA player statistics through a medallion architecture (staging, intermediate, marts). Handles multi-team trades and edge cases across every season since 1949. Calculates 15+ advanced metrics including True Shooting %, PER-36, and usage rates to produce analytics-ready datasets for downstream reporting.</p>
+
+        <div class="insight-callout">
+          <p class="insight-label">💡 Featured insight</p>
+          <p class="insight-stat">50.4 PPG</p>
+          <p class="insight-body">Wilt Chamberlain's 1961-62 scoring average is the all-time record and it has stood for 63 years. That season he averaged 48.5 minutes per game in a 48-minute game, made possible only because he played through every overtime. No load management in 1962.</p>
+        </div>
+
+        <div class="tags">
+          <span class="tag tag-green">dbt</span>
+          <span class="tag tag-blue">PostgreSQL</span>
+          <span class="tag tag-purple">Python</span>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Writing -->
+    <section class="section" id="writing">
+      <p class="section-label">✍️ Latest Articles</p>
+
+      <div class="article-grid">
+
+        <a href="https://medium.com/@abdirahman2ali/lookml-measures-explained-count-sum-average-and-everything-in-between-96db5b80e71f" target="_blank" rel="noopener" class="article-card">
+          <p class="article-date">Mar 2026</p>
+          <h3>LookML Measures Explained: Count, Sum, Average, and Everything In Between</h3>
+          <span class="article-read">Read &rarr;</span>
+        </a>
+
+        <a href="https://medium.com/@abdirahman2ali/lookml-dimensions-explained-types-labels-drill-fields-and-links-1698fec318b4" target="_blank" rel="noopener" class="article-card">
+          <p class="article-date">Mar 2026</p>
+          <h3>LookML Dimensions Explained: Types, Labels, Drill Fields, and Links</h3>
+          <span class="article-read">Read &rarr;</span>
+        </a>
+
+        <a href="https://medium.com/@abdirahman2ali/lookml-views-the-essential-building-blocks-d03c621e1c47" target="_blank" rel="noopener" class="article-card">
+          <p class="article-date">Jan 2026</p>
+          <h3>LookML Views: The Essential Building Blocks</h3>
+          <span class="article-read">Read &rarr;</span>
+        </a>
+
+        <a href="https://medium.com/@abdirahman2ali/speed-up-your-looker-dashboards-practical-tips-for-performance-97a4e30a7579" target="_blank" rel="noopener" class="article-card">
+          <p class="article-date">Jun 2025</p>
+          <h3>Speed Up Your Looker Dashboards: Practical Tips for Performance</h3>
+          <span class="article-read">Read &rarr;</span>
+        </a>
 
       </div>
+
+      <a href="https://medium.com/@abdirahman2ali" target="_blank" rel="noopener" class="all-articles-link">All articles on Medium &rarr;</a>
     </section>
 
   </main>
 
   <footer>
     <p>Abdirahman Ali &middot; 2026</p>
-    <nav class="links">
+    <div class="footer-links">
       <a href="https://github.com/abdirahman2ali" target="_blank" rel="noopener">GitHub</a>
       <a href="https://medium.com/@abdirahman2ali" target="_blank" rel="noopener">Medium</a>
-      <a href="https://www.linkedin.com/in/abdirahman-ali" target="_blank" rel="noopener">LinkedIn</a>
-    </nav>
+      <a href="https://www.linkedin.com/in/abdirahman-ali/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
   </footer>
 
 </body>
