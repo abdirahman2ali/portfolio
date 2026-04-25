@@ -29,13 +29,17 @@
 
     <!-- Hero -->
     <section class="hero">
-      <p class="hero-pre">👋 Hey there, I'm</p>
+      <p class="hero-pre">Hello, I'm</p>
       <h1 class="hero-name">Abdirahman Ali.</h1>
       <p class="hero-role">Senior Analytics Engineer. I build the infrastructure that turns raw data into decisions.</p>
-      <ul class="hero-status">
-        <li>⚡ 5+ years across the full analytics stack</li>
-        <li>🔧 Specializing in dbt, Looker, and warehouse design</li>
-      </ul>
+      <div class="hero-chips">
+        <span class="chip">dbt</span>
+        <span class="chip">Looker</span>
+        <span class="chip">SQL</span>
+        <span class="chip">Python</span>
+        <span class="chip">Snowflake</span>
+        <span class="chip">PostgreSQL</span>
+      </div>
       <div class="hero-links">
         <a href="https://github.com/abdirahman2ali" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
         <a href="https://www.linkedin.com/in/abdirahman-ali/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
@@ -45,7 +49,10 @@
 
     <!-- About Me -->
     <section class="section">
-      <p class="section-label">🧑‍💻 About Me</p>
+      <div class="section-meta">
+        <span class="section-eyebrow">Background</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
 
       <div class="about-grid">
         <div class="about-text">
@@ -62,49 +69,94 @@
 
     <!-- Projects -->
     <section class="section" id="projects">
-      <p class="section-label">🛠️ Projects</p>
+      <div class="section-meta">
+        <span class="section-eyebrow">Work</span>
+        <h2 class="section-title">Projects</h2>
+      </div>
 
-      <div class="project-feature">
-        <div class="project-feature-header">
-          <div>
-            <h2 class="project-title">NBA Analytics Pipeline</h2>
-            <p class="project-subtitle">End-to-end data pipeline covering 70+ years of NBA history</p>
-          </div>
-          <a href="https://abdirahman2ali.github.io/nba-dashboard" target="_blank" rel="noopener" class="btn btn-outline">View live &rarr;</a>
-        </div>
+      <div class="project-stack">
 
-        <a href="https://abdirahman2ali.github.io/nba-dashboard" target="_blank" rel="noopener" class="dashboard-preview-link">
-          <div class="browser-mockup">
-            <div class="browser-bar">
-              <span class="browser-dot d-red"></span>
-              <span class="browser-dot d-yellow"></span>
-              <span class="browser-dot d-green"></span>
-              <span class="browser-url">abdirahman2ali.github.io/nba-dashboard</span>
+        <!-- NBA Analytics Pipeline -->
+        <div class="project-feature">
+          <div class="project-feature-header">
+            <div>
+              <h3 class="project-title">NBA Analytics Pipeline</h3>
+              <p class="project-subtitle">End-to-end data pipeline covering 70+ years of NBA history</p>
             </div>
-            <img src="assets/dashboard-preview.png" alt="NBA Analytics Dashboard preview" class="dashboard-preview">
+            <a href="https://abdirahman2ali.github.io/nba-dashboard" target="_blank" rel="noopener" class="btn btn-outline">View live &rarr;</a>
           </div>
-        </a>
 
-        <p class="project-description">Built a transformation pipeline processing NBA player statistics through a medallion architecture (staging, intermediate, marts). Handles multi-team trades and edge cases across every season since 1949. Calculates 15+ advanced metrics including True Shooting %, PER-36, and usage rates to produce analytics-ready datasets for downstream reporting.</p>
+          <a href="https://abdirahman2ali.github.io/nba-dashboard" target="_blank" rel="noopener" class="dashboard-preview-link">
+            <div class="browser-mockup">
+              <div class="browser-bar">
+                <span class="browser-dot d-red"></span>
+                <span class="browser-dot d-yellow"></span>
+                <span class="browser-dot d-green"></span>
+                <span class="browser-url">abdirahman2ali.github.io/nba-dashboard</span>
+              </div>
+              <img src="assets/dashboard-preview.png" alt="NBA Analytics Dashboard preview" class="dashboard-preview">
+            </div>
+          </a>
 
-        <div class="insight-callout">
-          <p class="insight-label">💡 Featured insight</p>
-          <p class="insight-stat">50.4 PPG</p>
-          <p class="insight-body">Wilt Chamberlain's 1961-62 scoring average is the all-time record and it has stood for 63 years. That season he averaged 48.5 minutes per game in a 48-minute game, made possible only because he played through every overtime. No load management in 1962.</p>
+          <p class="project-description">Built a transformation pipeline processing NBA player statistics through a medallion architecture (staging, intermediate, marts). Handles multi-team trades and edge cases across every season since 1949. Calculates 15+ advanced metrics including True Shooting %, PER-36, and usage rates to produce analytics-ready datasets for downstream reporting.</p>
+
+          <div class="tags">
+            <span class="tag tag-blue">dbt</span>
+            <span class="tag tag-teal">PostgreSQL</span>
+            <span class="tag tag-purple">Python</span>
+          </div>
         </div>
 
-        <div class="tags">
-          <span class="tag tag-green">dbt</span>
-          <span class="tag tag-blue">PostgreSQL</span>
-          <span class="tag tag-purple">Python</span>
+        <!-- Daily Job Listings Digest -->
+        <div class="project-feature">
+          <div class="project-feature-header">
+            <div>
+              <h3 class="project-title">Daily Job Listings Digest</h3>
+              <p class="project-subtitle">Automated job scraping and email digest via JSearch API</p>
+            </div>
+            <a href="https://github.com/abdirahman2ali/job-search" target="_blank" rel="noopener" class="btn btn-outline">View on GitHub &rarr;</a>
+          </div>
 
+          <p class="project-description">Built a Python automation that pulls fresh job listings daily from the JSearch API (RapidAPI), filters by location and role criteria, formats results into a styled HTML email with job title, company, location, salary range, and apply links, then sends the digest automatically via Gmail SMTP.</p>
+
+          <div class="email-callout">
+            <p class="email-callout-label">Sample output</p>
+            <div class="email-mockup-header">
+              <p>Daily GTA Office Job Listings</p>
+              <span>Wednesday, March 4, 2026 &nbsp;|&nbsp; Entry-Level &amp; No Experience Required</span>
+            </div>
+            <div class="email-mockup-body">
+              <div class="email-listing">
+                <p class="email-listing-title">Receptionist (Contract)</p>
+                <p class="email-listing-meta">Robert Half &nbsp;&middot;&nbsp; Markham, ON &nbsp;&middot;&nbsp; ~$19–$22/hr</p>
+              </div>
+              <div class="email-listing">
+                <p class="email-listing-title">Office Administrator (Talent Pool)</p>
+                <p class="email-listing-meta">Randstad Canada &nbsp;&middot;&nbsp; Downtown Toronto, ON &nbsp;&middot;&nbsp; Competitive</p>
+              </div>
+              <div class="email-listing">
+                <p class="email-listing-title">Administrative Assistant</p>
+                <p class="email-listing-meta">Hays &nbsp;&middot;&nbsp; Mississauga, ON &nbsp;&middot;&nbsp; ~$20–$25/hr</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tags">
+            <span class="tag tag-purple">Python</span>
+            <span class="tag tag-orange">JSearch API</span>
+            <span class="tag tag-teal">Gmail SMTP</span>
+          </div>
         </div>
+
       </div>
     </section>
 
     <!-- Writing -->
     <section class="section" id="writing">
-      <p class="section-label">✍️ Latest Articles</p>
+      <div class="section-meta">
+        <span class="section-eyebrow">Writing</span>
+        <h2 class="section-title">Latest Articles</h2>
+      </div>
 
       <div class="article-grid">
 
