@@ -7,7 +7,7 @@
   <title>Abdirahman Ali</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 </head>
@@ -21,54 +21,69 @@
         <a href="#" class="nav-link nav-active">Home</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#writing" class="nav-link">Articles</a>
+        <a href="mailto:abdirahman2ali@gmail.com" class="btn-hire">Hire Me</a>
       </div>
     </div>
   </nav>
 
   <main>
+    <div class="ambient-glow" style="top: -100px; right: -100px;"></div>
+    <div class="ambient-glow" style="bottom: 200px; left: -150px;"></div>
 
     <!-- Hero -->
-    <section class="hero">
-      <p class="hero-pre">Hello, I'm</p>
-      <h1 class="hero-name">Abdirahman Ali.</h1>
-      <p class="hero-role">Senior Analytics Engineer. I build the infrastructure that turns raw data into decisions.</p>
-      <div class="hero-chips">
-        <span class="chip">dbt</span>
-        <span class="chip">Looker</span>
-        <span class="chip">SQL</span>
-        <span class="chip">Python</span>
-        <span class="chip">Snowflake</span>
-        <span class="chip">PostgreSQL</span>
+    <section class="hero reveal">
+      <div class="hero-content">
+        <p class="hero-pre">Hello, I'm</p>
+        <h1 class="hero-name">Abdirahman Ali.</h1>
+        <p class="hero-role">Senior Analytics Engineer. I build the infrastructure that turns raw data into decisions.</p>
+        <div class="hero-chips">
+          <span class="chip">dbt</span>
+          <span class="chip">Looker</span>
+          <span class="chip">SQL</span>
+          <span class="chip">Python</span>
+          <span class="chip">Snowflake</span>
+          <span class="chip">PostgreSQL</span>
+        </div>
+        <div class="hero-links">
+          <a href="https://github.com/abdirahman2ali" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+          <a href="https://www.linkedin.com/in/abdirahman-ali/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+          <a href="mailto:abdirahman2ali@gmail.com" class="btn btn-outline">Email</a>
+        </div>
       </div>
-      <div class="hero-links">
-        <a href="https://github.com/abdirahman2ali" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
-        <a href="https://www.linkedin.com/in/abdirahman-ali/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
-        <a href="mailto:abdirahman2ali@gmail.com" class="btn btn-outline">Email</a>
+
+      <div class="hero-portrait-wrap" id="portrait-container">
+        <div class="hero-portrait-container">
+          <div class="hero-portrait-circle float-animation" id="portrait-parallax">
+            <img src="assets/photo.png" alt="Abdirahman Ali">
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- About Me -->
-    <section class="section">
+    <section class="section reveal" id="about">
       <div class="section-meta">
         <span class="section-eyebrow">Background</span>
         <h2 class="section-title">About Me</h2>
       </div>
 
-      <div class="about-grid">
-        <div class="about-text">
-          <p>I'm a data professional with <span class="hl">5+ years of experience</span> building analytics infrastructure at tech companies. My work spans the full stack: <span class="hl">data modeling in dbt</span>, warehouse design, and the pipelines connecting all of it.</p>
-          <p>Most of what I build ends up in the hands of <span class="hl">non-technical teams</span>. The goal is always the same: make it easy for people to answer their own questions, without filing a ticket and waiting a week.</p>
-          <p>Away from work, I'm deep in <span class="hl">NBA statistics</span>. Deep enough that I built a full data pipeline to analyze 70 years of player data. You can explore it below.</p>
-          <p>I'm also getting deeper into <span class="hl">AI tooling</span>. Looking to take on more projects with Claude Code and explore how it can be used to solve harder, more interesting problems.</p>
-        </div>
-        <div class="about-photo-wrapper">
-          <img src="assets/photo.png" alt="Abdirahman Ali" class="about-photo">
+      <div class="about-card">
+        <div class="about-grid">
+          <div class="about-text">
+            <p>I'm a data professional with <span class="hl">5+ years of experience</span> building analytics infrastructure at tech companies. My work spans the full stack: <span class="hl">data modeling in dbt</span>, warehouse design, and the pipelines connecting all of it.</p>
+            <p>Most of what I build ends up in the hands of <span class="hl">non-technical teams</span>. The goal is always the same: make it easy for people to answer their own questions, without filing a ticket and waiting a week.</p>
+            <p>Away from work, I'm deep in <span class="hl">NBA statistics</span>. Deep enough that I built a full data pipeline to analyze 70 years of player data. You can explore it below.</p>
+            <p>I'm also getting deeper into <span class="hl">AI tooling</span>. Looking to take on more projects with Claude Code and explore how it can be used to solve harder, more interesting problems.</p>
+          </div>
+          <div class="about-photo-wrapper">
+            <img src="assets/photo-about.png" alt="Abdirahman Ali" class="about-photo">
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Projects -->
-    <section class="section" id="projects">
+    <section class="section reveal" id="projects">
       <div class="section-meta">
         <span class="section-eyebrow">Work</span>
         <h2 class="section-title">Projects</h2>
@@ -98,7 +113,7 @@
             </div>
           </a>
 
-          <p class="project-description">Built a transformation pipeline processing NBA player statistics through a medallion architecture (staging, intermediate, marts). Handles multi-team trades and edge cases across every season since 1949. Calculates 15+ advanced metrics including True Shooting %, PER-36, and usage rates to produce analytics-ready datasets for downstream reporting.</p>
+          <p class="project-description">A dbt pipeline processing 70+ years of NBA stats through staging, intermediate, and mart layers. Calculates 15+ advanced metrics including True Shooting %, PER-36, and usage rates.</p>
 
           <div class="tags">
             <span class="tag tag-blue">dbt</span>
@@ -107,39 +122,76 @@
           </div>
         </div>
 
+        <!-- Toronto Parking Analytics -->
+        <div class="project-feature">
+          <div class="project-feature-header">
+            <div>
+              <h3 class="project-title">Toronto Parking Analytics</h3>
+              <p class="project-subtitle">34.7M+ parking ticket records from 2006 to present</p>
+            </div>
+            <a href="https://github.com/abdirahman2ali/toronto-parking-analytics" target="_blank" rel="noopener" class="btn btn-outline">View on GitHub &rarr;</a>
+          </div>
+
+          <div class="project-data-mockup">
+            <div class="project-data-mockup-header">Top infractions &mdash; all time</div>
+            <div class="project-data-mockup-row"><span>Park &mdash; Prohibited Time</span><span>8.2M tickets</span></div>
+            <div class="project-data-mockup-row"><span>Meter Expired</span><span>5.7M tickets</span></div>
+            <div class="project-data-mockup-row"><span>Street Cleaning</span><span>4.1M tickets</span></div>
+          </div>
+
+          <p class="project-description">Ingests 34.7M+ Toronto parking tickets via the CKAN API into ClickHouse, transformed through a dbt medallion architecture with 19 tests. <!-- BI layer coming next — planning to use Omni --></p>
+
+          <div class="tags">
+            <span class="tag tag-blue">dbt</span>
+            <span class="tag tag-orange">ClickHouse</span>
+            <span class="tag tag-purple">Python</span>
+          </div>
+        </div>
+
+        <!-- Lead Pipeline -->
+        <div class="project-feature">
+          <div class="project-feature-header">
+            <div>
+              <h3 class="project-title">Lead Pipeline</h3>
+              <p class="project-subtitle">AI-powered B2B lead scoring and routing system</p>
+            </div>
+            <a href="https://github.com/abdirahman2ali/lead-pipeline" target="_blank" rel="noopener" class="btn btn-outline">View on GitHub &rarr;</a>
+          </div>
+
+          <div class="project-data-mockup">
+            <div class="project-data-mockup-header">Pipeline stages</div>
+            <div class="project-data-mockup-row"><span>Ingest</span><span>Webhook / CSV</span></div>
+            <div class="project-data-mockup-row"><span>Score</span><span class="badge badge-blue">Claude API</span></div>
+            <div class="project-data-mockup-row"><span>Route &amp; Alert</span><span class="badge badge-green">Hot leads</span></div>
+          </div>
+
+          <p class="project-description">Modular lead pipeline: ingest via webhook or CSV, deduplicate, score with Claude AI, and route to reps. FastAPI backend with Neon Postgres and GitHub Actions automation.</p>
+
+          <div class="tags">
+            <span class="tag tag-purple">Python</span>
+            <span class="tag tag-teal">FastAPI</span>
+            <span class="tag tag-blue">Claude API</span>
+          </div>
+        </div>
+
         <!-- Daily Job Listings Digest -->
         <div class="project-feature">
           <div class="project-feature-header">
             <div>
               <h3 class="project-title">Daily Job Listings Digest</h3>
-              <p class="project-subtitle">Automated job scraping and email digest via JSearch API</p>
+              <p class="project-subtitle">Automated job scraping and email digest</p>
             </div>
             <a href="https://github.com/abdirahman2ali/job-search" target="_blank" rel="noopener" class="btn btn-outline">View on GitHub &rarr;</a>
           </div>
 
-          <p class="project-description">Built a Python automation that pulls fresh job listings daily from the JSearch API (RapidAPI), filters by location and role criteria, formats results into a styled HTML email with job title, company, location, salary range, and apply links, then sends the digest automatically via Gmail SMTP.</p>
-
-          <div class="email-callout">
-            <p class="email-callout-label">Sample output</p>
-            <div class="email-mockup-header">
-              <p>Daily GTA Office Job Listings</p>
-              <span>Wednesday, March 4, 2026 &nbsp;|&nbsp; Entry-Level &amp; No Experience Required</span>
-            </div>
-            <div class="email-mockup-body">
-              <div class="email-listing">
-                <p class="email-listing-title">Receptionist (Contract)</p>
-                <p class="email-listing-meta">Robert Half &nbsp;&middot;&nbsp; Markham, ON &nbsp;&middot;&nbsp; ~$19–$22/hr</p>
-              </div>
-              <div class="email-listing">
-                <p class="email-listing-title">Office Administrator (Talent Pool)</p>
-                <p class="email-listing-meta">Randstad Canada &nbsp;&middot;&nbsp; Downtown Toronto, ON &nbsp;&middot;&nbsp; Competitive</p>
-              </div>
-              <div class="email-listing">
-                <p class="email-listing-title">Administrative Assistant</p>
-                <p class="email-listing-meta">Hays &nbsp;&middot;&nbsp; Mississauga, ON &nbsp;&middot;&nbsp; ~$20–$25/hr</p>
-              </div>
-            </div>
+          <div class="project-data-mockup">
+            <div class="project-data-mockup-header">Sample digest &mdash; March 4, 2026</div>
+            <div class="project-data-mockup-row"><span>Receptionist (Contract)</span><span>~$19–$22/hr</span></div>
+            <div class="project-data-mockup-row"><span>Office Administrator</span><span>Competitive</span></div>
+            <div class="project-data-mockup-row"><span>Administrative Assistant</span><span>~$20–$25/hr</span></div>
           </div>
+
+          <p class="project-description">Daily job digest via JSearch API — filtered by role and location, formatted and sent via Gmail SMTP.</p>
 
           <div class="tags">
             <span class="tag tag-purple">Python</span>
@@ -152,7 +204,7 @@
     </section>
 
     <!-- Writing -->
-    <section class="section" id="writing">
+    <section class="section reveal" id="writing">
       <div class="section-meta">
         <span class="section-eyebrow">Writing</span>
         <h2 class="section-title">Latest Articles</h2>
@@ -161,26 +213,34 @@
       <div class="article-grid">
 
         <a href="https://medium.com/@abdirahman2ali/lookml-measures-explained-count-sum-average-and-everything-in-between-96db5b80e71f" target="_blank" rel="noopener" class="article-card">
-          <p class="article-date">Mar 2026</p>
-          <h3>LookML Measures Explained: Count, Sum, Average, and Everything In Between</h3>
+          <div>
+            <span class="article-date">Mar 2026</span>
+            <h3>LookML Measures Explained: Count, Sum, Average, and Everything In Between</h3>
+          </div>
           <span class="article-read">Read &rarr;</span>
         </a>
 
         <a href="https://medium.com/@abdirahman2ali/lookml-dimensions-explained-types-labels-drill-fields-and-links-1698fec318b4" target="_blank" rel="noopener" class="article-card">
-          <p class="article-date">Mar 2026</p>
-          <h3>LookML Dimensions Explained: Types, Labels, Drill Fields, and Links</h3>
+          <div>
+            <span class="article-date">Mar 2026</span>
+            <h3>LookML Dimensions Explained: Types, Labels, Drill Fields, and Links</h3>
+          </div>
           <span class="article-read">Read &rarr;</span>
         </a>
 
         <a href="https://medium.com/@abdirahman2ali/lookml-views-the-essential-building-blocks-d03c621e1c47" target="_blank" rel="noopener" class="article-card">
-          <p class="article-date">Jan 2026</p>
-          <h3>LookML Views: The Essential Building Blocks</h3>
+          <div>
+            <span class="article-date">Jan 2026</span>
+            <h3>LookML Views: The Essential Building Blocks</h3>
+          </div>
           <span class="article-read">Read &rarr;</span>
         </a>
 
         <a href="https://medium.com/@abdirahman2ali/speed-up-your-looker-dashboards-practical-tips-for-performance-97a4e30a7579" target="_blank" rel="noopener" class="article-card">
-          <p class="article-date">Jun 2025</p>
-          <h3>Speed Up Your Looker Dashboards: Practical Tips for Performance</h3>
+          <div>
+            <span class="article-date">Jun 2025</span>
+            <h3>Speed Up Your Looker Dashboards: Practical Tips for Performance</h3>
+          </div>
           <span class="article-read">Read &rarr;</span>
         </a>
 
@@ -192,13 +252,73 @@
   </main>
 
   <footer>
-    <p>Abdirahman Ali &middot; 2026</p>
-    <div class="footer-links">
-      <a href="https://github.com/abdirahman2ali" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://medium.com/@abdirahman2ali" target="_blank" rel="noopener">Medium</a>
-      <a href="https://www.linkedin.com/in/abdirahman-ali/" target="_blank" rel="noopener">LinkedIn</a>
+    <div class="footer-inner">
+      <p>Abdirahman Ali &middot; 2026</p>
+      <div class="footer-links">
+        <a href="https://github.com/abdirahman2ali" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://medium.com/@abdirahman2ali" target="_blank" rel="noopener">Medium</a>
+        <a href="https://www.linkedin.com/in/abdirahman-ali/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
     </div>
   </footer>
+
+  <script>
+    // Scroll reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Portrait parallax on mousemove
+    const portrait = document.getElementById('portrait-parallax');
+    const portraitContainer = document.getElementById('portrait-container');
+
+    if (portraitContainer && portrait) {
+      portraitContainer.addEventListener('mousemove', (e) => {
+        const rect = portraitContainer.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        portrait.style.transform = `translateY(calc(var(--float-offset, 0px) + ${y * 16}px)) translateX(${x * 16}px) scale(1.02)`;
+      });
+
+      portraitContainer.addEventListener('mouseleave', () => {
+        portrait.style.transform = '';
+      });
+    }
+
+    // Ambient glow follows mouse
+    const glows = document.querySelectorAll('.ambient-glow');
+    document.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 30;
+      const y = (e.clientY / window.innerHeight - 0.5) * 30;
+      glows.forEach(g => {
+        g.style.transform = `translate(${x}px, ${y}px)`;
+      });
+    });
+
+    // Nav active state on scroll
+    const sections = document.querySelectorAll('section[id], .hero');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(l => l.classList.remove('nav-active'));
+          const id = entry.target.id;
+          const active = document.querySelector(`.nav-link[href="#${id}"]`);
+          if (active) active.classList.add('nav-active');
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('section[id]').forEach(s => navObserver.observe(s));
+  </script>
 
 </body>
 </html>
