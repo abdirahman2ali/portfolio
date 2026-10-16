@@ -101,18 +101,31 @@ h3 { font-size: 1.15rem; font-weight: 700; }
 /* Hero */
 .hero { display: grid; gap: 32px; padding: 48px 0 32px; }
 .status { display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 0.8rem; color: var(--text-muted); margin-bottom: 16px; }
-.status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(86, 207, 178, 0.18); }
 .hero-name { font-size: clamp(2.5rem, 9vw, 4.5rem); font-weight: 800; }
 .hero-role { margin-top: 18px; font-size: 1.1rem; color: var(--text-muted); max-width: 52ch; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
 
-.hero-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-.hero-photo { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 25%; }
-.hero-facts { padding: 8px 20px 16px; }
-.hero-facts div { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
-.hero-facts div:last-child { border-bottom: 0; }
-.hero-facts dt { font-family: var(--mono); font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; padding-top: 2px; }
-.hero-facts dd { text-align: right; font-weight: 600; }
+.status-photo { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; object-position: center 20%; border: 2px solid var(--accent); }
+
+/* Lineage hero */
+.lineage-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+.lineage-title { font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 16px; }
+.lineage-graph { position: relative; display: flex; flex-direction: column; gap: 36px; }
+.lineage-edges { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.lineage-col { position: relative; display: flex; justify-content: center; gap: 10px; }
+.lineage-col::before { content: attr(data-label); position: absolute; left: 0; top: -20px; font-family: var(--mono); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); display: none; }
+.node { position: relative; z-index: 1; flex: 1; max-width: 200px; font: inherit; font-family: var(--mono); font-size: 0.74rem; color: var(--text); background: var(--surface-2); border: 1px solid var(--border-strong); border-radius: 10px; padding: 10px 8px; cursor: pointer; transition: opacity 0.2s, border-color 0.2s, background 0.2s; }
+.node[data-kind="source"] { border-left: 3px solid #5b8af0; }
+.node[data-kind="staging"] { border-left: 3px solid #b06cf6; }
+.node[data-kind="mart"] { border-left: 3px solid var(--accent); }
+.node[data-kind="bi"] { border-left: 3px solid #f6a20e; }
+.node:hover, .node.is-active { border-color: var(--accent); background: rgba(86, 207, 178, 0.1); }
+.edge { fill: none; stroke: var(--border-strong); stroke-width: 1.5; transition: opacity 0.2s, stroke 0.2s; }
+.edge.is-lit { stroke: var(--accent); }
+.pulse { fill: var(--accent); }
+.lineage-graph.has-active .node:not(.is-lit) { opacity: 0.3; }
+.lineage-graph.has-active .edge:not(.is-lit) { opacity: 0.15; }
+.lineage-detail { margin-top: 20px; min-height: 3.2em; font-size: 0.92rem; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 14px; }
 
 /* Stats */
 .stats-pending .stat-value { opacity: 0; }
@@ -180,8 +193,12 @@ h3 { font-size: 1.15rem; font-weight: 700; }
   .nav-inner { flex-wrap: nowrap; padding-top: 0; padding-bottom: 0; height: 64px; }
   .nav-links { order: 2; width: auto; margin-left: auto; margin-right: 20px; }
   .nav-cta { order: 3; }
-  .hero { grid-template-columns: 1.3fr 1fr; align-items: center; gap: 48px; padding: 80px 0 48px; }
+  .hero { grid-template-columns: 1fr 1.5fr; align-items: center; gap: 48px; padding: 80px 0 48px; }
   .stats { grid-template-columns: repeat(4, 1fr); }
+  .lineage-graph { flex-direction: row; justify-content: space-between; gap: 36px; padding-top: 22px; }
+  .lineage-col { flex-direction: column; justify-content: center; flex: 1; gap: 14px; }
+  .lineage-col::before { display: block; }
+  .node { max-width: none; flex: 0 0 auto; padding: 10px 6px; }
   .pipeline { grid-template-columns: repeat(4, 1fr); }
   .stage:not(:last-child)::after { content: '\2192'; position: absolute; right: -17px; top: 50%; transform: translateY(-50%); color: var(--accent); z-index: 1; background: var(--bg); width: 22px; text-align: center; }
   .project-lead { grid-template-columns: 1fr 1.2fr; }

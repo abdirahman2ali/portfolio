@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <script src="main.js" defer></script>
+  <script src="lineage.js" defer></script>
 </head>
 <body>
 
@@ -31,7 +32,7 @@
     <!-- Hero -->
     <section class="hero">
       <div class="hero-copy">
-        <p class="status"><span class="status-dot"></span>Senior Analytics Engineer</p>
+        <p class="status"><img src="assets/photo.png" alt="Abdirahman Ali" class="status-photo">Senior Analytics Engineer</p>
         <h1 class="hero-name">Abdirahman Ali</h1>
         <p class="hero-role">I build the infrastructure that turns raw data into decisions: dbt models, warehouses, and BI that non-technical teams can use without filing a ticket.</p>
         <div class="hero-actions">
@@ -41,13 +42,27 @@
         </div>
       </div>
 
-      <div class="hero-card">
-        <img src="assets/photo.png" alt="Abdirahman Ali" class="hero-photo">
-        <dl class="hero-facts">
-          <div><dt>Focus</dt><dd>dbt, Looker, SQL</dd></div>
-          <div><dt>Warehouses</dt><dd>Snowflake, Databricks, ClickHouse</dd></div>
-          <div><dt>Now building</dt><dd>AI agents with Claude</dd></div>
-        </dl>
+      <div class="lineage-card">
+        <p class="lineage-title">Lineage, simplified</p>
+        <div class="lineage-graph" id="lineage">
+          <svg class="lineage-edges" aria-hidden="true"></svg>
+          <div class="lineage-col" data-label="Source">
+            <button type="button" class="node" data-id="src_nba" data-kind="source">Basketball Reference</button>
+            <button type="button" class="node" data-id="src_tkt" data-kind="source">Toronto Open Data</button>
+          </div>
+          <div class="lineage-col" data-label="Staging">
+            <button type="button" class="node" data-id="stg_nba" data-kind="staging">stg_nba_*</button>
+            <button type="button" class="node" data-id="stg_tkt" data-kind="staging">stg_parking_*</button>
+          </div>
+          <div class="lineage-col" data-label="Marts">
+            <button type="button" class="node" data-id="fct_nba" data-kind="mart">fct_nba_*</button>
+            <button type="button" class="node" data-id="fct_tkt" data-kind="mart">fct_parking_*</button>
+          </div>
+          <div class="lineage-col" data-label="BI">
+            <button type="button" class="node" data-id="bi" data-kind="bi">Omni</button>
+          </div>
+        </div>
+        <p class="lineage-detail" id="lineage-detail" aria-live="polite">Select a node to trace its path through the pipeline.</p>
       </div>
     </section>
 
