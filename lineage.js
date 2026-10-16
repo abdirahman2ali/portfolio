@@ -6,7 +6,7 @@ const DETAILS = {
   stg_nba: 'Staging. One to one with the source: renames, types and dedupe, no business logic.',
   stg_tkt: 'Staging. Cleans ticket records before any joins or aggregation.',
   fct_nba: 'Marts. 15+ advanced metrics including True Shooting %, PER-36 and usage rate.',
-  fct_tkt: 'Marts. Infraction, street and fine revenue models, covered by 19 dbt tests.',
+  fct_tkt: 'Marts. Infraction, street and fine revenue models.',
   bi: 'Omni. The semantic layer and dashboards non-technical teams use to answer their own questions.',
 };
 
@@ -27,7 +27,7 @@ if (graph && detail) {
   const nodes = new Map([...graph.querySelectorAll('.node')].map((el) => [el.dataset.id, el]));
   const defaultText = detail.textContent;
   const isMotionAllowed = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const isHorizontalQuery = window.matchMedia('(min-width: 720px)');
+  const isHorizontalQuery = window.matchMedia('(min-width: 960px)');
   let edgeEls = [];
   let activeId = null;
 
@@ -109,7 +109,6 @@ if (graph && detail) {
     nodes.forEach((el, id) => {
       el.classList.toggle('is-active', id === activeId);
       el.classList.toggle('is-lit', Boolean(lit) && lit.has(id));
-      el.setAttribute('aria-pressed', String(id === activeId));
     });
     edgeEls.forEach(({ from, to, path }) => {
       path.classList.toggle('is-lit', Boolean(lit) && lit.has(from) && lit.has(to));
@@ -123,16 +122,27 @@ if (graph && detail) {
   }
 
   nodes.forEach((el, id) => {
+    el.setAttribute('aria-describedby', detail.id);
     el.addEventListener('mouseenter', () => setActive(id));
-    el.addEventListener('focus', () => setActive(id));
+    el.addEventListener('focus', () => {
+      if (el.matches(':focus-visible')) setActive(id);
+    });
     el.addEventListener('click', () => setActive(id));
   });
-  graph.addEventListener('mouseleave', () => {
-    const focused = [...nodes].find(([, el]) => el === document.activeElement);
-    setActive(focused ? focused[0] : null);
+  graph.addEventListener('mouseleave', () => setActive(null));
+  graph.addEventListener('focusout', (event) => {
+    if (!graph.contains(event.relatedTarget)) setActive(null);
+  });
+  document.addEventListener('pointerdown', (event) => {
+    if (!graph.contains(event.target)) setActive(null);
   });
 
-  new ResizeObserver(drawEdges).observe(graph);
+  let lastWidth = 0;
+  new ResizeObserver(() => {
+    const width = Math.round(graph.getBoundingClientRect().width);
+    if (width === lastWidth) return;
+    lastWidth = width;
+    drawEdges();
+  }).observe(graph);
   isHorizontalQuery.addEventListener('change', drawEdges);
-  drawEdges();
 }
