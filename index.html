@@ -3,255 +3,247 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Abdirahman Ali — Senior Analytics Engineer specializing in dbt, Looker, and the full analytics stack.">
+  <meta name="description" content="Abdirahman Ali, Senior Analytics Engineer specializing in dbt, Looker, and the full analytics stack.">
   <title>Abdirahman Ali</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <script src="main.js" defer></script>
 </head>
 <body>
 
-  <!-- Nav -->
-  <nav class="nav">
+  <header class="nav">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">AA</a>
-      <div class="nav-right">
-        <a href="#" class="nav-link nav-active">Home</a>
+      <a href="#top" class="nav-logo">AA<span class="nav-logo-dot">.</span></a>
+      <nav class="nav-links" aria-label="Primary">
         <a href="#projects" class="nav-link">Projects</a>
-        <a href="#writing" class="nav-link">Articles</a>
-        <a href="mailto:abdirahman2ali@gmail.com" class="btn-hire">Let's Talk</a>
-      </div>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#writing" class="nav-link">Writing</a>
+        <a href="mailto:abdirahman2ali@gmail.com" class="btn btn-primary">Let's Talk</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <main>
-    <div class="ambient-glow" style="top: -100px; right: -100px;"></div>
-    <div class="ambient-glow" style="bottom: 200px; left: -150px;"></div>
+  <main id="top">
 
     <!-- Hero -->
-    <section class="hero reveal">
-      <div class="hero-content">
-        <p class="hero-pre">Hello, I'm</p>
-        <h1 class="hero-name">Abdirahman Ali.</h1>
-        <p class="hero-role">Senior Analytics Engineer. I build the infrastructure that turns raw data into decisions.</p>
-        <div class="hero-chips">
-          <span class="chip">dbt</span>
-          <span class="chip">Looker</span>
-          <span class="chip">SQL</span>
-          <span class="chip">Python</span>
-          <span class="chip">Snowflake</span>
-          <span class="chip">PostgreSQL</span>
-        </div>
-        <div class="hero-links">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="status"><span class="status-dot"></span>Senior Analytics Engineer</p>
+        <h1 class="hero-name">Abdirahman Ali</h1>
+        <p class="hero-role">I build the infrastructure that turns raw data into decisions: dbt models, warehouses, and BI that non-technical teams can use without filing a ticket.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">See the work</a>
           <a href="https://github.com/abdirahman2ali" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
           <a href="https://www.linkedin.com/in/abdirahman-ali/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
-          <a href="mailto:abdirahman2ali@gmail.com" class="btn btn-outline">Email</a>
         </div>
       </div>
 
-      <div class="hero-portrait-wrap" id="portrait-container">
-        <div class="hero-portrait-container">
-          <div class="hero-portrait-circle float-animation" id="portrait-parallax">
-            <img src="assets/photo.png" alt="Abdirahman Ali">
-          </div>
-        </div>
+      <div class="hero-card">
+        <img src="assets/photo.png" alt="Abdirahman Ali" class="hero-photo">
+        <dl class="hero-facts">
+          <div><dt>Focus</dt><dd>dbt, Looker, SQL</dd></div>
+          <div><dt>Warehouses</dt><dd>Snowflake, Databricks, ClickHouse</dd></div>
+          <div><dt>Now building</dt><dd>AI agents with Claude</dd></div>
+        </dl>
       </div>
     </section>
 
-    <!-- About Me -->
-    <section class="section reveal" id="about">
-      <div class="section-meta">
-        <span class="section-eyebrow">Background</span>
-        <h2 class="section-title">About Me</h2>
+    <!-- Stats -->
+    <section class="stats" aria-label="By the numbers">
+      <div class="stat">
+        <span class="stat-value"><span data-count="5">5</span>+</span>
+        <span class="stat-label">Years in analytics</span>
       </div>
+      <div class="stat">
+        <span class="stat-value"><span data-count="34.7" data-decimals="1">34.7</span>M</span>
+        <span class="stat-label">Parking tickets modeled</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value"><span data-count="70">70</span>+</span>
+        <span class="stat-label">Years of NBA history</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value"><span data-count="15">15</span>+</span>
+        <span class="stat-label">Advanced metrics built</span>
+      </div>
+    </section>
 
-      <div class="about-card">
-        <div class="about-grid">
-          <div class="about-text">
-            <p>I'm a data professional with <span class="hl">5+ years of experience</span> building analytics infrastructure at tech companies. My work spans the full stack: <span class="hl">data modeling in dbt</span>, warehouse design, and the pipelines connecting all of it.</p>
-            <p>Most of what I build ends up in the hands of <span class="hl">non-technical teams</span>. The goal is always the same: make it easy for people to answer their own questions, without filing a ticket and waiting a week.</p>
-            <p>Away from work, I'm deep in <span class="hl">NBA statistics</span>. Deep enough that I built a full data pipeline to analyze 70 years of player data. You can explore it below.</p>
-            <p>I'm also getting deeper into <span class="hl">AI tooling</span>. Looking to take on more projects with Claude Code and explore how it can be used to solve harder, more interesting problems.</p>
-          </div>
-          <div class="about-photo-wrapper">
-            <img src="assets/photo-about.png" alt="Abdirahman Ali" class="about-photo">
-          </div>
-        </div>
+    <!-- Stack as pipeline -->
+    <section class="section" id="stack">
+      <div class="section-head">
+        <span class="eyebrow">Stack</span>
+        <h2>The pipeline I work across</h2>
       </div>
+      <ol class="pipeline">
+        <li class="stage">
+          <span class="stage-name">Ingest</span>
+          <span class="stage-tools">Python, Airflow, Mage AI</span>
+        </li>
+        <li class="stage">
+          <span class="stage-name">Warehouse</span>
+          <span class="stage-tools">Snowflake, Databricks, ClickHouse, PostgreSQL</span>
+        </li>
+        <li class="stage">
+          <span class="stage-name">Model</span>
+          <span class="stage-tools">dbt, SQL, dimensional modeling</span>
+        </li>
+        <li class="stage">
+          <span class="stage-name">Serve</span>
+          <span class="stage-tools">Looker, Omni, Tableau, Power BI</span>
+        </li>
+      </ol>
     </section>
 
     <!-- Projects -->
-    <section class="section reveal" id="projects">
-      <div class="section-meta">
-        <span class="section-eyebrow">Work</span>
-        <h2 class="section-title">Projects</h2>
+    <section class="section" id="projects">
+      <div class="section-head">
+        <span class="eyebrow">Work</span>
+        <h2>Projects</h2>
       </div>
 
-      <div class="project-stack">
-
-        <!-- NBA Analytics Pipeline -->
-        <div class="project-feature">
-          <div class="project-feature-header">
-            <div>
-              <h3 class="project-title">NBA Analytics Pipeline</h3>
-              <p class="project-subtitle">End-to-end data pipeline covering 70+ years of NBA history</p>
-            </div>
-            <a href="https://github.com/abdirahman2ali/analytics-portfolio" target="_blank" rel="noopener" class="btn btn-outline">View on GitHub &rarr;</a>
-          </div>
-
-          <a href="https://github.com/abdirahman2ali/analytics-portfolio" target="_blank" rel="noopener" class="dashboard-preview-link">
-            <div class="browser-mockup">
-              <div class="browser-bar">
-                <span class="browser-dot d-red"></span>
-                <span class="browser-dot d-yellow"></span>
-                <span class="browser-dot d-green"></span>
-                <span class="browser-url">partnerali.omniapp.co &mdash; NBA Player Performance &amp; League Trends</span>
-              </div>
-              <img src="assets/dashboard-preview.png" alt="NBA Analytics Dashboard preview" class="dashboard-preview">
-            </div>
-          </a>
-
-          <p class="project-description">A dbt pipeline processing 70+ years of NBA stats through staging, intermediate, and mart layers. Calculates 15+ advanced metrics including True Shooting %, PER-36, and usage rates. BI layer lives on Omni, running against Databricks Unity Catalog.</p>
-
-          <div class="tags">
-            <span class="tag tag-blue">dbt</span>
-            <span class="tag tag-teal">Databricks</span>
-            <span class="tag tag-purple">Python</span>
-            <span class="tag tag-orange">Omni</span>
-          </div>
+      <article class="project project-lead">
+        <div class="project-body">
+          <h3>NBA Analytics Pipeline</h3>
+          <p class="project-sub">70+ years of NBA history, from raw stats to a live BI layer.</p>
+          <p>A dbt pipeline moving data through staging, intermediate, and mart layers. Calculates 15+ advanced metrics including True Shooting %, PER-36, and usage rate. BI lives on Omni, running against Databricks Unity Catalog.</p>
+          <ul class="tags">
+            <li>dbt</li><li>Databricks</li><li>Python</li><li>Omni</li>
+          </ul>
+          <a href="https://github.com/abdirahman2ali/analytics-portfolio" target="_blank" rel="noopener" class="link-arrow">View on GitHub</a>
         </div>
+        <a href="https://github.com/abdirahman2ali/analytics-portfolio" target="_blank" rel="noopener" class="project-shot">
+          <span class="shot-bar">NBA Player Performance &amp; League Trends</span>
+          <img src="assets/dashboard-preview.png" alt="NBA analytics dashboard preview" loading="lazy">
+        </a>
+      </article>
 
-        <!-- Toronto Parking Analytics -->
-        <div class="project-feature">
-          <div class="project-feature-header">
-            <div>
-              <h3 class="project-title">Toronto Parking Analytics</h3>
-              <p class="project-subtitle">34.7M+ parking ticket records from 2006 to present</p>
-            </div>
+      <div class="project-grid">
+        <article class="project">
+          <div class="project-body">
+            <h3>Toronto Parking Analytics</h3>
+            <p class="project-sub">34.7M+ tickets from 2006 to present.</p>
+            <p>Ingests tickets via the CKAN API into Databricks, transformed through a dbt medallion architecture with 19 tests. Includes a geo heatmap of enforcement by street.</p>
+            <table class="mini-table">
+              <caption>Top infractions, all time</caption>
+              <tbody>
+                <tr><th scope="row">Park, Prohibited Time</th><td>8.2M</td></tr>
+                <tr><th scope="row">Meter Expired</th><td>5.7M</td></tr>
+                <tr><th scope="row">Street Cleaning</th><td>4.1M</td></tr>
+              </tbody>
+            </table>
+            <ul class="tags">
+              <li>dbt</li><li>Databricks</li><li>Python</li>
+            </ul>
           </div>
+        </article>
 
-          <div class="project-data-mockup">
-            <div class="project-data-mockup-header">Top infractions &mdash; all time</div>
-            <div class="project-data-mockup-row"><span>Park &mdash; Prohibited Time</span><span>8.2M tickets</span></div>
-            <div class="project-data-mockup-row"><span>Meter Expired</span><span>5.7M tickets</span></div>
-            <div class="project-data-mockup-row"><span>Street Cleaning</span><span>4.1M tickets</span></div>
+        <article class="project">
+          <div class="project-body">
+            <h3>Lead Pipeline</h3>
+            <p class="project-sub">AI-powered B2B lead scoring and routing.</p>
+            <p>Ingest via webhook or CSV, deduplicate, score with Claude, and route to reps. FastAPI backend with Neon Postgres and GitHub Actions automation.</p>
+            <table class="mini-table">
+              <caption>Pipeline stages</caption>
+              <tbody>
+                <tr><th scope="row">Ingest</th><td>Webhook / CSV</td></tr>
+                <tr><th scope="row">Score</th><td>Claude API</td></tr>
+                <tr><th scope="row">Route</th><td>Hot-lead alerts</td></tr>
+              </tbody>
+            </table>
+            <ul class="tags">
+              <li>Python</li><li>FastAPI</li><li>Claude API</li>
+            </ul>
+            <a href="https://github.com/abdirahman2ali/lead-pipeline" target="_blank" rel="noopener" class="link-arrow">View on GitHub</a>
           </div>
+        </article>
 
-          <p class="project-description">Ingests 34.7M+ Toronto parking tickets via the CKAN API into Databricks, transformed through a dbt medallion architecture with 19 tests. Includes a geo heatmap of enforcement patterns by street.</p>
-
-          <div class="tags">
-            <span class="tag tag-blue">dbt</span>
-            <span class="tag tag-teal">Databricks</span>
-            <span class="tag tag-purple">Python</span>
+        <article class="project">
+          <div class="project-body">
+            <h3>Daily Job Listings Digest</h3>
+            <p class="project-sub">Automated scraping and email digest.</p>
+            <p>Daily digest via the JSearch API, filtered by role and location, formatted and sent through Gmail SMTP.</p>
+            <ul class="tags">
+              <li>Python</li><li>JSearch API</li><li>Gmail SMTP</li>
+            </ul>
+            <a href="https://github.com/abdirahman2ali/job-search" target="_blank" rel="noopener" class="link-arrow">View on GitHub</a>
           </div>
-        </div>
-
-        <!-- Lead Pipeline -->
-        <div class="project-feature">
-          <div class="project-feature-header">
-            <div>
-              <h3 class="project-title">Lead Pipeline</h3>
-              <p class="project-subtitle">AI-powered B2B lead scoring and routing system</p>
-            </div>
-            <a href="https://github.com/abdirahman2ali/lead-pipeline" target="_blank" rel="noopener" class="btn btn-outline">View on GitHub &rarr;</a>
-          </div>
-
-          <div class="project-data-mockup">
-            <div class="project-data-mockup-header">Pipeline stages</div>
-            <div class="project-data-mockup-row"><span>Ingest</span><span>Webhook / CSV</span></div>
-            <div class="project-data-mockup-row"><span>Score</span><span class="badge badge-blue">Claude API</span></div>
-            <div class="project-data-mockup-row"><span>Route &amp; Alert</span><span class="badge badge-green">Hot leads</span></div>
-          </div>
-
-          <p class="project-description">Modular lead pipeline: ingest via webhook or CSV, deduplicate, score with Claude AI, and route to reps. FastAPI backend with Neon Postgres and GitHub Actions automation.</p>
-
-          <div class="tags">
-            <span class="tag tag-purple">Python</span>
-            <span class="tag tag-teal">FastAPI</span>
-            <span class="tag tag-blue">Claude API</span>
-          </div>
-        </div>
-
-        <!-- Daily Job Listings Digest -->
-        <div class="project-feature">
-          <div class="project-feature-header">
-            <div>
-              <h3 class="project-title">Daily Job Listings Digest</h3>
-              <p class="project-subtitle">Automated job scraping and email digest</p>
-            </div>
-            <a href="https://github.com/abdirahman2ali/job-search" target="_blank" rel="noopener" class="btn btn-outline">View on GitHub &rarr;</a>
-          </div>
-
-          <div class="project-data-mockup">
-            <div class="project-data-mockup-header">Sample digest &mdash; March 4, 2026</div>
-            <div class="project-data-mockup-row"><span>Receptionist (Contract)</span><span>~$19–$22/hr</span></div>
-            <div class="project-data-mockup-row"><span>Office Administrator</span><span>Competitive</span></div>
-            <div class="project-data-mockup-row"><span>Administrative Assistant</span><span>~$20–$25/hr</span></div>
-          </div>
-
-          <p class="project-description">Daily job digest via JSearch API — filtered by role and location, formatted and sent via Gmail SMTP.</p>
-
-          <div class="tags">
-            <span class="tag tag-purple">Python</span>
-            <span class="tag tag-orange">JSearch API</span>
-            <span class="tag tag-teal">Gmail SMTP</span>
-          </div>
-        </div>
-
+        </article>
       </div>
     </section>
 
+    <!-- Experience -->
+    <section class="section" id="experience">
+      <div class="section-head">
+        <span class="eyebrow">Experience</span>
+        <h2>Where I've worked</h2>
+      </div>
+      <ol class="timeline">
+        <li>
+          <span class="timeline-date">Current</span>
+          <div><h3>Salla</h3><p>Senior Analytics Engineer, remote</p></div>
+        </li>
+        <li>
+          <span class="timeline-date">Sep 2025 to present</span>
+          <div><h3>Certn</h3><p>Senior Analytics Engineer</p></div>
+        </li>
+        <li>
+          <span class="timeline-date">Jul 2021 to Aug 2025</span>
+          <div><h3>Tonal</h3><p>Senior BI Analyst, then Marketing Analytics Analyst</p></div>
+        </li>
+        <li>
+          <span class="timeline-date">Sep to Dec 2020</span>
+          <div><h3>Super Inc.</h3><p>Data Analyst</p></div>
+        </li>
+      </ol>
+    </section>
+
     <!-- Writing -->
-    <section class="section reveal" id="writing">
-      <div class="section-meta">
-        <span class="section-eyebrow">Writing</span>
-        <h2 class="section-title">Latest Articles</h2>
+    <section class="section" id="writing">
+      <div class="section-head">
+        <span class="eyebrow">Writing</span>
+        <h2>Latest articles</h2>
       </div>
-
-      <div class="article-grid">
-
-        <a href="https://medium.com/@abdirahman2ali/lookml-measures-explained-count-sum-average-and-everything-in-between-96db5b80e71f" target="_blank" rel="noopener" class="article-card">
-          <div>
+      <ul class="articles">
+        <li>
+          <a href="https://medium.com/@abdirahman2ali/lookml-measures-explained-count-sum-average-and-everything-in-between-96db5b80e71f" target="_blank" rel="noopener">
             <span class="article-date">Mar 2026</span>
-            <h3>LookML Measures Explained: Count, Sum, Average, and Everything In Between</h3>
-          </div>
-          <span class="article-read">Read &rarr;</span>
-        </a>
-
-        <a href="https://medium.com/@abdirahman2ali/lookml-dimensions-explained-types-labels-drill-fields-and-links-1698fec318b4" target="_blank" rel="noopener" class="article-card">
-          <div>
+            <span class="article-title">LookML Measures Explained: Count, Sum, Average, and Everything In Between</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://medium.com/@abdirahman2ali/lookml-dimensions-explained-types-labels-drill-fields-and-links-1698fec318b4" target="_blank" rel="noopener">
             <span class="article-date">Mar 2026</span>
-            <h3>LookML Dimensions Explained: Types, Labels, Drill Fields, and Links</h3>
-          </div>
-          <span class="article-read">Read &rarr;</span>
-        </a>
-
-        <a href="https://medium.com/@abdirahman2ali/lookml-views-the-essential-building-blocks-d03c621e1c47" target="_blank" rel="noopener" class="article-card">
-          <div>
+            <span class="article-title">LookML Dimensions Explained: Types, Labels, Drill Fields, and Links</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://medium.com/@abdirahman2ali/lookml-views-the-essential-building-blocks-d03c621e1c47" target="_blank" rel="noopener">
             <span class="article-date">Jan 2026</span>
-            <h3>LookML Views: The Essential Building Blocks</h3>
-          </div>
-          <span class="article-read">Read &rarr;</span>
-        </a>
-
-        <a href="https://medium.com/@abdirahman2ali/speed-up-your-looker-dashboards-practical-tips-for-performance-97a4e30a7579" target="_blank" rel="noopener" class="article-card">
-          <div>
+            <span class="article-title">LookML Views: The Essential Building Blocks</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://medium.com/@abdirahman2ali/speed-up-your-looker-dashboards-practical-tips-for-performance-97a4e30a7579" target="_blank" rel="noopener">
             <span class="article-date">Jun 2025</span>
-            <h3>Speed Up Your Looker Dashboards: Practical Tips for Performance</h3>
-          </div>
-          <span class="article-read">Read &rarr;</span>
-        </a>
+            <span class="article-title">Speed Up Your Looker Dashboards: Practical Tips for Performance</span>
+          </a>
+        </li>
+      </ul>
+      <a href="https://medium.com/@abdirahman2ali" target="_blank" rel="noopener" class="link-arrow">All articles on Medium</a>
+    </section>
 
-      </div>
-
-      <a href="https://medium.com/@abdirahman2ali" target="_blank" rel="noopener" class="all-articles-link">All articles on Medium &rarr;</a>
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+      <h2>Have a data problem worth solving?</h2>
+      <a href="mailto:abdirahman2ali@gmail.com" class="btn btn-primary">abdirahman2ali@gmail.com</a>
     </section>
 
   </main>
 
-  <footer>
+  <footer class="footer">
     <div class="footer-inner">
       <p>Abdirahman Ali &middot; 2026</p>
       <div class="footer-links">
@@ -261,64 +253,6 @@
       </div>
     </div>
   </footer>
-
-  <script>
-    // Scroll reveal
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
-
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-    // Portrait parallax on mousemove
-    const portrait = document.getElementById('portrait-parallax');
-    const portraitContainer = document.getElementById('portrait-container');
-
-    if (portraitContainer && portrait) {
-      portraitContainer.addEventListener('mousemove', (e) => {
-        const rect = portraitContainer.getBoundingClientRect();
-        const x = (e.clientX - rect.left) / rect.width - 0.5;
-        const y = (e.clientY - rect.top) / rect.height - 0.5;
-        portrait.style.transform = `translateY(calc(var(--float-offset, 0px) + ${y * 16}px)) translateX(${x * 16}px) scale(1.02)`;
-      });
-
-      portraitContainer.addEventListener('mouseleave', () => {
-        portrait.style.transform = '';
-      });
-    }
-
-    // Ambient glow follows mouse
-    const glows = document.querySelectorAll('.ambient-glow');
-    document.addEventListener('mousemove', (e) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 30;
-      const y = (e.clientY / window.innerHeight - 0.5) * 30;
-      glows.forEach(g => {
-        g.style.transform = `translate(${x}px, ${y}px)`;
-      });
-    });
-
-    // Nav active state on scroll
-    const sections = document.querySelectorAll('section[id], .hero');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    const navObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(l => l.classList.remove('nav-active'));
-          const id = entry.target.id;
-          const active = document.querySelector(`.nav-link[href="#${id}"]`);
-          if (active) active.classList.add('nav-active');
-        }
-      });
-    }, { threshold: 0.5 });
-
-    document.querySelectorAll('section[id]').forEach(s => navObserver.observe(s));
-  </script>
 
 </body>
 </html>
