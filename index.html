@@ -47,42 +47,31 @@
         <div class="lineage-graph" id="lineage">
           <svg class="lineage-edges" aria-hidden="true"></svg>
           <div class="lineage-col" data-label="Source">
-            <button type="button" class="node" data-id="src_nba" data-kind="source">Basketball Reference</button>
-            <button type="button" class="node" data-id="src_tkt" data-kind="source">Toronto Open Data</button>
+            <button type="button" class="node" data-id="src_db" data-kind="source">Application DB</button>
+            <button type="button" class="node" data-id="src_saas" data-kind="source">SaaS APIs</button>
+            <button type="button" class="node" data-id="src_events" data-kind="source">Event stream</button>
           </div>
           <div class="lineage-col" data-label="Staging">
-            <button type="button" class="node" data-id="stg_nba" data-kind="staging">stg_nba_*</button>
-            <button type="button" class="node" data-id="stg_tkt" data-kind="staging">stg_parking_*</button>
+            <button type="button" class="node" data-id="stg_db" data-kind="staging">stg_app_*</button>
+            <button type="button" class="node" data-id="stg_saas" data-kind="staging">stg_saas_*</button>
+            <button type="button" class="node" data-id="stg_events" data-kind="staging">stg_events_*</button>
+          </div>
+          <div class="lineage-col" data-label="Intermediate">
+            <button type="button" class="node" data-id="int_customers" data-kind="intermediate">int_customers</button>
+            <button type="button" class="node" data-id="int_revenue" data-kind="intermediate">int_revenue</button>
+            <button type="button" class="node" data-id="int_sessions" data-kind="intermediate">int_sessions</button>
           </div>
           <div class="lineage-col" data-label="Marts">
-            <button type="button" class="node" data-id="fct_nba" data-kind="mart">fct_nba_*</button>
-            <button type="button" class="node" data-id="fct_tkt" data-kind="mart">fct_parking_*</button>
+            <button type="button" class="node" data-id="dim_customers" data-kind="mart">dim_customers</button>
+            <button type="button" class="node" data-id="fct_orders" data-kind="mart">fct_orders</button>
+            <button type="button" class="node" data-id="fct_sessions" data-kind="mart">fct_sessions</button>
           </div>
           <div class="lineage-col" data-label="BI">
-            <button type="button" class="node" data-id="bi" data-kind="bi">Omni</button>
+            <button type="button" class="node" data-id="dash" data-kind="bi">Dashboards</button>
+            <button type="button" class="node" data-id="explores" data-kind="bi">Explores</button>
           </div>
         </div>
         <p class="lineage-detail" id="lineage-detail">Select a node to trace its path through the pipeline.</p>
-      </div>
-    </section>
-
-    <!-- Stats -->
-    <section class="stats" aria-label="By the numbers">
-      <div class="stat">
-        <span class="stat-value"><span data-count="5">5</span>+</span>
-        <span class="stat-label">Years in analytics</span>
-      </div>
-      <div class="stat">
-        <span class="stat-value"><span data-count="34.7" data-decimals="1">34.7</span>M</span>
-        <span class="stat-label">Parking tickets modeled</span>
-      </div>
-      <div class="stat">
-        <span class="stat-value"><span data-count="70">70</span>+</span>
-        <span class="stat-label">Years of NBA history</span>
-      </div>
-      <div class="stat">
-        <span class="stat-value"><span data-count="15">15</span>+</span>
-        <span class="stat-label">Advanced metrics built</span>
       </div>
     </section>
 

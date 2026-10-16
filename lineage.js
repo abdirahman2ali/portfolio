@@ -1,22 +1,41 @@
 const SVG_NS = 'http://www.w3.org/2000/svg';
 
 const DETAILS = {
-  src_nba: 'Basketball Reference. Player and season stats from 1950 to present, scraped with Python.',
-  src_tkt: 'Toronto Open Data. 34.7M+ parking tickets from 2006 to present, pulled from the CKAN API.',
-  stg_nba: 'Staging. One to one with the source: renames, types and dedupe, no business logic.',
-  stg_tkt: 'Staging. Cleans ticket records before any joins or aggregation.',
-  fct_nba: 'Marts. 15+ advanced metrics including True Shooting %, PER-36 and usage rate.',
-  fct_tkt: 'Marts. Infraction, street and fine revenue models.',
-  bi: 'Omni. The semantic layer and dashboards non-technical teams use to answer their own questions.',
+  src_db: 'Source. Operational database tables replicated into the warehouse.',
+  src_saas: 'Source. Third-party SaaS data pulled in through connectors like Fivetran.',
+  src_events: 'Source. Product and web events landing from a stream or batch export.',
+  stg_db: 'Staging. One to one with the source: renames, casts and dedupe, no business logic.',
+  stg_saas: 'Staging. Standardizes each vendor schema before anything is joined.',
+  stg_events: 'Staging. Flattens raw event payloads into typed, queryable columns.',
+  int_customers: 'Intermediate. Joins customer records across systems into one identity.',
+  int_revenue: 'Intermediate. Reconciles orders and payments into revenue-ready rows.',
+  int_sessions: 'Intermediate. Sessionizes raw events and attaches user context.',
+  dim_customers: 'Mart. One row per customer with descriptive attributes.',
+  fct_orders: 'Mart. One row per order, additive measures only.',
+  fct_sessions: 'Mart. One row per session at the lowest grain.',
+  dash: 'BI. Dashboards built on tested marts, never on raw tables.',
+  explores: 'BI. Governed Explores so non-technical teams can answer their own questions.',
 };
 
 const EDGES = [
-  ['src_nba', 'stg_nba'],
-  ['src_tkt', 'stg_tkt'],
-  ['stg_nba', 'fct_nba'],
-  ['stg_tkt', 'fct_tkt'],
-  ['fct_nba', 'bi'],
-  ['fct_tkt', 'bi'],
+  ['src_db', 'stg_db'],
+  ['src_saas', 'stg_saas'],
+  ['src_events', 'stg_events'],
+  ['stg_db', 'int_customers'],
+  ['stg_saas', 'int_customers'],
+  ['stg_db', 'int_revenue'],
+  ['stg_saas', 'int_revenue'],
+  ['stg_events', 'int_sessions'],
+  ['stg_events', 'int_customers'],
+  ['int_customers', 'dim_customers'],
+  ['int_customers', 'fct_sessions'],
+  ['int_revenue', 'fct_orders'],
+  ['int_sessions', 'fct_sessions'],
+  ['dim_customers', 'dash'],
+  ['dim_customers', 'explores'],
+  ['fct_orders', 'dash'],
+  ['fct_orders', 'explores'],
+  ['fct_sessions', 'explores'],
 ];
 
 const graph = document.getElementById('lineage');
@@ -77,11 +96,11 @@ if (graph && detail) {
     const reveal = document.createElementNS(SVG_NS, 'set');
     reveal.setAttribute('attributeName', 'visibility');
     reveal.setAttribute('to', 'visible');
-    reveal.setAttribute('begin', `${index * 0.5}s`);
+    reveal.setAttribute('begin', `${(index % 6) * 0.5}s`);
     dot.appendChild(reveal);
     const motion = document.createElementNS(SVG_NS, 'animateMotion');
     motion.setAttribute('dur', '3s');
-    motion.setAttribute('begin', `${index * 0.5}s`);
+    motion.setAttribute('begin', `${(index % 6) * 0.5}s`);
     motion.setAttribute('repeatCount', 'indefinite');
     motion.setAttribute('path', path);
     dot.appendChild(motion);
