@@ -19,12 +19,13 @@ function animateCount(el) {
 const stats = document.querySelector('.stats');
 if (stats && !prefersReducedMotion) {
   const counters = stats.querySelectorAll('[data-count]');
-  counters.forEach((el) => { el.textContent = '0'; });
+  stats.classList.add('stats-pending');
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
-      counters.forEach(animateCount);
+      stats.classList.remove('stats-pending');
+      counters.forEach((el) => { el.textContent = '0'; animateCount(el); });
       observer.disconnect();
     });
   }, { threshold: 0.4 });
