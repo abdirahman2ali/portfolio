@@ -120,58 +120,26 @@
         </a>
       </article>
 
-      <div class="project-grid">
-        <article class="project">
-          <div class="project-body">
-            <h3>Toronto Parking Analytics</h3>
-            <p class="project-sub">34.7M+ tickets from 2006 to present.</p>
-            <p>Ingests tickets via the CKAN API into Databricks, transformed through a dbt medallion architecture with 19 tests. Includes a geo heatmap of enforcement by street.</p>
-            <table class="mini-table">
-              <caption>Top infractions, all time</caption>
-              <tbody>
-                <tr><th scope="row">Park, Prohibited Time</th><td>8.2M</td></tr>
-                <tr><th scope="row">Meter Expired</th><td>5.7M</td></tr>
-                <tr><th scope="row">Street Cleaning</th><td>4.1M</td></tr>
-              </tbody>
-            </table>
-            <ul class="tags">
-              <li>dbt</li><li>Databricks</li><li>Python</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="project">
-          <div class="project-body">
-            <h3>Lead Pipeline</h3>
-            <p class="project-sub">AI-powered B2B lead scoring and routing.</p>
-            <p>Ingest via webhook or CSV, deduplicate, score with Claude, and route to reps. FastAPI backend with Neon Postgres and GitHub Actions automation.</p>
-            <table class="mini-table">
-              <caption>Pipeline stages</caption>
-              <tbody>
-                <tr><th scope="row">Ingest</th><td>Webhook / CSV</td></tr>
-                <tr><th scope="row">Score</th><td>Claude API</td></tr>
-                <tr><th scope="row">Route</th><td>Hot-lead alerts</td></tr>
-              </tbody>
-            </table>
-            <ul class="tags">
-              <li>Python</li><li>FastAPI</li><li>Claude API</li>
-            </ul>
-            <a href="https://github.com/abdirahman2ali/lead-pipeline" target="_blank" rel="noopener" class="link-arrow">View on GitHub</a>
-          </div>
-        </article>
-
-        <article class="project">
-          <div class="project-body">
-            <h3>Daily Job Listings Digest</h3>
-            <p class="project-sub">Automated scraping and email digest.</p>
-            <p>Daily digest via the JSearch API, filtered by role and location, formatted and sent through Gmail SMTP.</p>
-            <ul class="tags">
-              <li>Python</li><li>JSearch API</li><li>Gmail SMTP</li>
-            </ul>
-            <a href="https://github.com/abdirahman2ali/job-search" target="_blank" rel="noopener" class="link-arrow">View on GitHub</a>
-          </div>
-        </article>
-      </div>
+      <article class="project project-lead">
+        <div class="project-body">
+          <h3>Toronto Parking Analytics</h3>
+          <p class="project-sub">34.7M+ tickets from 2006 to present.</p>
+          <p>Ingests tickets via the CKAN API into Databricks, transformed through a dbt medallion architecture with 19 tests. Includes a geo heatmap of enforcement by street.</p>
+          <ul class="tags">
+            <li>dbt</li><li>Databricks</li><li>Python</li>
+          </ul>
+        </div>
+        <div class="project-shot project-data">
+          <table class="mini-table">
+            <caption>Top infractions, all time</caption>
+            <tbody>
+              <tr><th scope="row">Park, Prohibited Time</th><td>8.2M</td></tr>
+              <tr><th scope="row">Meter Expired</th><td>5.7M</td></tr>
+              <tr><th scope="row">Street Cleaning</th><td>4.1M</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
     </section>
 
     <!-- Experience -->
